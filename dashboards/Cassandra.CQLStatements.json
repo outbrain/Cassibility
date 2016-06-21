@@ -1,0 +1,500 @@
+{
+  "id": null,
+  "title": "Cassandra.CQLStatements",
+  "originalTitle": "Cassandra.CQLStatements",
+  "tags": [
+    "Cassandra"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": true,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "{{%datasource%}}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 3,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_CQL_PreparedStatementsExecuted{function=\"Count\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])) by ($GroupBy)",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": "",
+              "interval": "1m"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Prepared Statements Executed per Minute",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "{{%datasource%}}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": " sum(irate(cassandra_CQL_RegularStatementsExecuted{function=\"Count\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])) by ($GroupBy)",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": "",
+              "interval": "1m"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Regular Statements Executed per Minute",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "{{%datasource%}}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false,
+            "hideZero": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": " avg(cassandra_CQL_PreparedStatementsRatio{function=\"Value\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}) by ($GroupBy)",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": "",
+              "interval": "1m"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Prepared Statements Ratio",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "decimals": null
+        }
+      ],
+      "showTitle": false,
+      "title": "Row"
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "{{%datasource%}}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 4,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_CQL_PreparedStatementsCount{function=\"Value\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}) by ($GroupBy) ",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": "",
+              "interval": "1m"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Prepared Statements Count",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "{{%datasource%}}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 1,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_CQL_PreparedStatementsEvicted{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}[4m])) by ($GroupBy) ",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": "",
+              "interval": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Prepared Statements Evicted per Minute",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ]
+    }
+  ],
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "pipe",
+        "datasource": "{{%datasource%}}",
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "pipe",
+        "name": "Cluster",
+        "query": "cassandra_CQL_PreparedStatementsRatio{}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/servicename=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "All",
+          "value": ".*"
+        },
+        "datasource": "{{%datasource%}}",
+        "hideLabel": false,
+        "includeAll": true,
+        "label": "",
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "DC",
+        "query": "cassandra_CQL_PreparedStatementsRatio{servicename='$Cluster'}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/datacenter=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "type": "query",
+        "datasource": "{{%datasource%}}",
+        "refresh": true,
+        "name": "Instance",
+        "includeAll": true,
+        "allFormat": "pipe",
+        "multi": true,
+        "multiFormat": "pipe",
+        "query": "cassandra_CQL_PreparedStatementsRatio{datacenter=~'$DC',servicename='$Cluster'}",
+        "regex": "/instance=\"([^:\"]+)/"
+      },
+      {
+        "type": "custom",
+        "datasource": null,
+        "refresh": false,
+        "name": "GroupBy",
+        "options": [
+          {
+            "text": "datacenter",
+            "value": "datacenter",
+            "selected": true
+          },
+          {
+            "text": "instance",
+            "value": "instance",
+            "selected": false
+          }
+        ],
+        "includeAll": false,
+        "allFormat": "glob",
+        "multi": false,
+        "multiFormat": "glob",
+        "query": "datacenter,instance",
+        "current": {
+          "text": "datacenter",
+          "value": "datacenter",
+          "tags": []
+        }
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 7,
+  "links": []
+}
