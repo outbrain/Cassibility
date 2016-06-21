@@ -1,9 +1,9 @@
 {
-  "id": 870,
-  "title": "hack.Cassandra.Entropy",
-  "originalTitle": "hack.Cassandra.Entropy",
+  "id": null,
+  "title": "Cassandra.Entropy",
+  "originalTitle": "Cassandra.Entropy",
   "tags": [
-    "cassandra"
+    "Cassandra"
   ],
   "style": "dark",
   "timezone": "browser",
