@@ -59,7 +59,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_HintedHandOffManager_Hints_created{ip=~\"$ip\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_HintedHandOffManager_Hints_created{ip=~\"$IP\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
@@ -128,11 +128,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_Storage_TotalHints{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_Storage_TotalHints{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -197,11 +197,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_Storage_TotalHintsInProgress{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_Storage_TotalHintsInProgress{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -275,11 +275,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_ReadRepair_Attempted{function=~\"$function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_ReadRepair_Attempted{function=~\"$Function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -344,11 +344,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_ReadRepair_RepairedBackground{function=~\"$function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_ReadRepair_RepairedBackground{function=~\"$Function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -413,11 +413,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_ReadRepair_RepairedBlocking{function=~\"$function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_ReadRepair_RepairedBlocking{function=~\"$Function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -491,11 +491,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_Storage_Exceptions{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_Storage_Exceptions{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -560,11 +560,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "$graphFunction(increase(cassandra_Storage_Load{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m]))  by ($groupBy) ",
+              "expr": "$GraphFunction(increase(cassandra_Storage_Load{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
               "interval": "4m",
               "intervalFactor": 1,
-              "legendFormat": "{{$groupBy}}",
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
               "step": 240,
@@ -625,8 +625,6 @@
       {
         "allFormat": "pipe",
         "current": {
-          "text": "cass28onlineNew",
-          "value": "cass28onlineNew"
         },
         "datasource": "{{%datasource%}}",
         "includeAll": true,
@@ -636,155 +634,20 @@
         "options": [
           {
             "text": "All",
-            "value": "cass28onlineNew|cassandra-DocArticles|cassandra-PaidStats|cassandra-analytics|cassandra-aplifyServices|cassandra-cassAmpSimulator48|cassandra-cassDevIL48|cassandra-cassTeamCityChi|cassandra-cassTeamCityChi48|cassandra-cassTeamCityNY48|cassandra-documentServices|cassandra-documentServicesOnline|cassandra-hba|cassandra-images|cassandra-offline|cassandra-offlineOrganic|cassandra-onlineOrganic|cassandra-opscenter|cassandra-opscenter2|cassandra-opscenter3|cassandra-organic|cassandra-sphere|cassandra-sphere-old|cassandra-vr-new|cassandra-vr-stg|cassandra-who|cassandra-whoAggr",
-            "selected": false
-          },
-          {
-            "text": "cass28onlineNew",
-            "value": "cass28onlineNew",
-            "selected": true
-          },
-          {
-            "text": "cassandra-DocArticles",
-            "value": "cassandra-DocArticles",
-            "selected": false
-          },
-          {
-            "text": "cassandra-PaidStats",
-            "value": "cassandra-PaidStats",
-            "selected": false
-          },
-          {
-            "text": "cassandra-analytics",
-            "value": "cassandra-analytics",
-            "selected": false
-          },
-          {
-            "text": "cassandra-aplifyServices",
-            "value": "cassandra-aplifyServices",
-            "selected": false
-          },
-          {
-            "text": "cassandra-cassAmpSimulator48",
-            "value": "cassandra-cassAmpSimulator48",
-            "selected": false
-          },
-          {
-            "text": "cassandra-cassDevIL48",
-            "value": "cassandra-cassDevIL48",
-            "selected": false
-          },
-          {
-            "text": "cassandra-cassTeamCityChi",
-            "value": "cassandra-cassTeamCityChi",
-            "selected": false
-          },
-          {
-            "text": "cassandra-cassTeamCityChi48",
-            "value": "cassandra-cassTeamCityChi48",
-            "selected": false
-          },
-          {
-            "text": "cassandra-cassTeamCityNY48",
-            "value": "cassandra-cassTeamCityNY48",
-            "selected": false
-          },
-          {
-            "text": "cassandra-documentServices",
-            "value": "cassandra-documentServices",
-            "selected": false
-          },
-          {
-            "text": "cassandra-documentServicesOnline",
-            "value": "cassandra-documentServicesOnline",
-            "selected": false
-          },
-          {
-            "text": "cassandra-hba",
-            "value": "cassandra-hba",
-            "selected": false
-          },
-          {
-            "text": "cassandra-images",
-            "value": "cassandra-images",
-            "selected": false
-          },
-          {
-            "text": "cassandra-offline",
-            "value": "cassandra-offline",
-            "selected": false
-          },
-          {
-            "text": "cassandra-offlineOrganic",
-            "value": "cassandra-offlineOrganic",
-            "selected": false
-          },
-          {
-            "text": "cassandra-onlineOrganic",
-            "value": "cassandra-onlineOrganic",
-            "selected": false
-          },
-          {
-            "text": "cassandra-opscenter",
-            "value": "cassandra-opscenter",
-            "selected": false
-          },
-          {
-            "text": "cassandra-opscenter2",
-            "value": "cassandra-opscenter2",
-            "selected": false
-          },
-          {
-            "text": "cassandra-opscenter3",
-            "value": "cassandra-opscenter3",
-            "selected": false
-          },
-          {
-            "text": "cassandra-organic",
-            "value": "cassandra-organic",
-            "selected": false
-          },
-          {
-            "text": "cassandra-sphere",
-            "value": "cassandra-sphere",
-            "selected": false
-          },
-          {
-            "text": "cassandra-sphere-old",
-            "value": "cassandra-sphere-old",
-            "selected": false
-          },
-          {
-            "text": "cassandra-vr-new",
-            "value": "cassandra-vr-new",
-            "selected": false
-          },
-          {
-            "text": "cassandra-vr-stg",
-            "value": "cassandra-vr-stg",
-            "selected": false
-          },
-          {
-            "text": "cassandra-who",
-            "value": "cassandra-who",
-            "selected": false
-          },
-          {
-            "text": "cassandra-whoAggr",
-            "value": "cassandra-whoAggr",
+            "value": "",
             "selected": false
           }
         ],
-        "query": "consul_service_status{datacenter=~\"$DC\",service=~\"^cass.*\"}",
+        "query": "cassandra_Storage_TotalHints{datacenter=~\"$DC\"}",
         "refresh": true,
-        "regex": "/service=\"([^:\"]+)/",
+        "regex": "/servicename=\"([^:\"]+)/",
         "type": "query"
       },
       {
         "allFormat": "pipe",
         "current": {
           "text": "All",
-          "value": "chidc2|il|ladc1|nydc1|sadc1"
+          "value": ""
         },
         "datasource": "{{%datasource%}}",
         "includeAll": true,
@@ -794,33 +657,8 @@
         "options": [
           {
             "text": "All",
-            "value": "chidc2|il|ladc1|nydc1|sadc1",
+            "value": "",
             "selected": true
-          },
-          {
-            "text": "chidc2",
-            "value": "chidc2",
-            "selected": false
-          },
-          {
-            "text": "il",
-            "value": "il",
-            "selected": false
-          },
-          {
-            "text": "ladc1",
-            "value": "ladc1",
-            "selected": false
-          },
-          {
-            "text": "nydc1",
-            "value": "nydc1",
-            "selected": false
-          },
-          {
-            "text": "sadc1",
-            "value": "sadc1",
-            "selected": false
           }
         ],
         "query": "up",
@@ -840,7 +678,7 @@
         "includeAll": false,
         "multi": false,
         "multiFormat": "glob",
-        "name": "graphFunction",
+        "name": "GraphFunction",
         "options": [
           {
             "selected": false,
@@ -879,7 +717,7 @@
         "includeAll": false,
         "multi": false,
         "multiFormat": "glob",
-        "name": "groupBy",
+        "name": "GroupBy",
         "options": [
           {
             "selected": false,
@@ -931,7 +769,7 @@
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
-        "name": "keyspace",
+        "name": "Keyspace",
         "options": [
           {
 
@@ -952,7 +790,7 @@
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
-        "name": "function",
+        "name": "Function",
         "options": [
           {
             "text": "All",
@@ -1078,7 +916,7 @@
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
-        "name": "instance",
+        "name": "Instance",
         "options": [
           {
           }
@@ -1092,7 +930,7 @@
         "allFormat": "pipe",
         "current": {
           "text": "All",
-          "value": "DocumentMappingByMd5s|DocumentMappings"
+          "value": ""
         },
         "datasource": "{{%datasource%}}",
         "includeAll": true,
@@ -1102,21 +940,11 @@
         "options": [
           {
             "text": "All",
-            "value": "DocumentMappingByMd5s|DocumentMappings",
+            "value": "",
             "selected": true
-          },
-          {
-            "text": "DocumentMappingByMd5s",
-            "value": "DocumentMappingByMd5s",
-            "selected": false
-          },
-          {
-            "text": "DocumentMappings",
-            "value": "DocumentMappings",
-            "selected": false
           }
         ],
-        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",keyspace=~\"$keyspace\"}",
+        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",keyspace=~\"$Keyspace\"}",
         "refresh": true,
         "regex": "/ColumnFamily=\"([^:\"]+)/",
         "type": "query"
@@ -1131,7 +959,7 @@
         "includeAll": false,
         "multi": false,
         "multiFormat": "glob",
-        "name": "topk",
+        "name": "Topk",
         "options": [
           {
             "selected": true,
@@ -1183,7 +1011,7 @@
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
-        "name": "ip",
+        "name": "IP",
         "options": [
           {
             "text": "All",
