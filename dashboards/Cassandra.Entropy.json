@@ -41,7 +41,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -61,12 +61,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_HintedHandOffManager_Hints_created{ip=~\"$IP\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": null,
+              "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -110,7 +110,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -130,12 +130,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_Storage_TotalHints{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -179,7 +179,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -199,12 +199,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_Storage_TotalHintsInProgress{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -257,7 +257,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -277,12 +277,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_ReadRepair_Attempted{function=~\"$Function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -326,7 +326,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -346,12 +346,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_ReadRepair_RepairedBackground{function=~\"$Function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -395,7 +395,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -415,12 +415,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_ReadRepair_RepairedBlocking{function=~\"$Function\",servicename=~\"$Cluster\",datacenter=~\"$DC\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -473,7 +473,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -493,12 +493,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_Storage_Exceptions{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -542,7 +542,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
@@ -562,12 +562,12 @@
             {
               "expr": "$GraphFunction(increase(cassandra_Storage_Load{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } [4m]))  by ($GroupBy) ",
               "hide": false,
-              "interval": "4m",
+              "interval": "1m",
               "intervalFactor": 1,
               "legendFormat": "{{$GroupBy}}",
               "metric": "",
               "refId": "A",
-              "step": 240,
+              "step": 60,
               "target": ""
             }
           ],
@@ -624,20 +624,13 @@
     "list": [
       {
         "allFormat": "pipe",
-        "current": {
-        },
+        "current": null,
         "datasource": "{{%datasource%}}",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
         "name": "Cluster",
-        "options": [
-          {
-            "text": "All",
-            "value": "",
-            "selected": false
-          }
-        ],
+        "options": null,
         "query": "cassandra_Storage_TotalHints{datacenter=~\"$DC\"}",
         "refresh": true,
         "regex": "/servicename=\"([^:\"]+)/",
@@ -645,22 +638,13 @@
       },
       {
         "allFormat": "pipe",
-        "current": {
-          "text": "All",
-          "value": ""
-        },
+        "current":  null,
         "datasource": "{{%datasource%}}",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
         "name": "DC",
-        "options": [
-          {
-            "text": "All",
-            "value": "",
-            "selected": true
-          }
-        ],
+        "options": null,
         "query": "up",
         "refresh": true,
         "regex": "/datacenter=\"([^:\"]+)/",
@@ -671,8 +655,8 @@
         "current": {
           "selected": false,
           "tags": [],
-          "text": "max",
-          "value": "max"
+          "text": "avg",
+          "value": "avg"
         },
         "datasource": null,
         "includeAll": false,
@@ -681,12 +665,12 @@
         "name": "GraphFunction",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "avg",
             "value": "avg"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "max",
             "value": "max"
           },
@@ -708,10 +692,9 @@
       {
         "allFormat": "glob",
         "current": {
-          "selected": true,
-          "tags": [],
-          "text": "instance",
-          "value": "instance"
+          "text": "datacenter",
+          "value": "datacenter",
+          "tags": []
         },
         "datasource": null,
         "includeAll": false,
@@ -720,12 +703,12 @@
         "name": "GroupBy",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "datacenter",
             "value": "datacenter"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "instance",
             "value": "instance"
           },
@@ -736,11 +719,6 @@
           },
           {
             "selected": false,
-            "text": "ColumnFamily",
-            "value": "ColumnFamily"
-          },
-          {
-            "selected": false,
             "text": "function",
             "value": "function"
           },
@@ -748,33 +726,21 @@
             "selected": false,
             "text": "keyspace",
             "value": "keyspace"
-          },
-          {
-            "selected": false,
-            "text": "Percentile",
-            "value": "Percentile"
           }
         ],
-        "query": "datacenter,instance,service,ColumnFamily,function,keyspace,Percentile",
+        "query": "datacenter,instance,service,function,keyspace",
         "refresh": false,
         "type": "custom"
       },
       {
         "allFormat": "pipe",
-        "current": {
-          "text": "All",
-          "value": ""
-        },
+        "current": null,
         "datasource": "{{%datasource%}}",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
         "name": "Keyspace",
-        "options": [
-          {
-
-          }
-        ],
+        "options": null,
         "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=~\"$Cluster\"}",
         "refresh": true,
         "regex": "/keyspace=\"([^:\"]+)/",
@@ -855,151 +821,17 @@
       },
       {
         "allFormat": "pipe",
-        "current": {
-          "text": "All",
-          "value": "50|75|95|98|99|999"
-        },
-        "datasource": "{{%datasource%}}",
-        "includeAll": true,
-        "multi": true,
-        "multiFormat": "pipe",
-        "name": "Percentile",
-        "options": [
-          {
-            "text": "All",
-            "value": "50|75|95|98|99|999",
-            "selected": true
-          },
-          {
-            "text": "50",
-            "value": "50",
-            "selected": false
-          },
-          {
-            "text": "75",
-            "value": "75",
-            "selected": false
-          },
-          {
-            "text": "95",
-            "value": "95",
-            "selected": false
-          },
-          {
-            "text": "98",
-            "value": "98",
-            "selected": false
-          },
-          {
-            "text": "99",
-            "value": "99",
-            "selected": false
-          },
-          {
-            "text": "999",
-            "value": "999",
-            "selected": false
-          }
-        ],
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=~\"$Cluster\"}",
-        "refresh": true,
-        "regex": "/Percentile=\"([^:\"]+)/",
-        "type": "query"
-      },
-      {
-        "allFormat": "pipe",
-        "current": {
-          "text": "All",
-          "value": ""
-        },
+        "current": null,
         "datasource": "{{%datasource%}}",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
         "name": "Instance",
-        "options": [
-          {
-          }
-        ],
-        "query": "consul_service_status{datacenter=~\"($DC)\",service=~\"$Cluster\"}",
+        "options": null,
+        "query": "cassandra_Storage_TotalHints{datacenter=~\"$DC\", servicename =~\"$Cluster\"}",
         "refresh": true,
         "regex": "/instance=\"([^:\"]+)/",
         "type": "query"
-      },
-      {
-        "allFormat": "pipe",
-        "current": {
-          "text": "All",
-          "value": ""
-        },
-        "datasource": "{{%datasource%}}",
-        "includeAll": true,
-        "multi": true,
-        "multiFormat": "pipe",
-        "name": "ColumnFamily",
-        "options": [
-          {
-            "text": "All",
-            "value": "",
-            "selected": true
-          }
-        ],
-        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",keyspace=~\"$Keyspace\"}",
-        "refresh": true,
-        "regex": "/ColumnFamily=\"([^:\"]+)/",
-        "type": "query"
-      },
-      {
-        "allFormat": "glob",
-        "current": {
-          "text": "1",
-          "value": "1"
-        },
-        "datasource": null,
-        "includeAll": false,
-        "multi": false,
-        "multiFormat": "glob",
-        "name": "Topk",
-        "options": [
-          {
-            "selected": true,
-            "text": "1",
-            "value": "1"
-          },
-          {
-            "selected": false,
-            "text": "2",
-            "value": "2"
-          },
-          {
-            "selected": false,
-            "text": "3",
-            "value": "3"
-          },
-          {
-            "selected": false,
-            "text": "5",
-            "value": "5"
-          },
-          {
-            "selected": false,
-            "text": "10",
-            "value": "10"
-          },
-          {
-            "selected": false,
-            "text": "20",
-            "value": "20"
-          },
-          {
-            "selected": false,
-            "text": "30",
-            "value": "30"
-          }
-        ],
-        "query": "1,2,3,5,10,20,30",
-        "refresh": false,
-        "type": "custom"
       },
       {
         "allFormat": "regex wildcard",
@@ -1030,6 +862,6 @@
     "list": []
   },
   "schemaVersion": 8,
-  "version": 0,
+  "version": 3,
   "links": []
 }
