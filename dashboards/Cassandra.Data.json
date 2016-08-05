@@ -1,0 +1,825 @@
+{
+  "id": 870,
+  "title": "Cassandra.Data",
+  "originalTitle": "Cassandra.Data",
+  "tags": [
+    "Cassandra",
+    "Cassibility"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": true,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 12,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\"} ",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Compression Ratio Per Node",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Compression"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {
+            "{}": "#508642"
+          },
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 13,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_LiveDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\"} ",
+              "hide": false,
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            },
+            {
+              "expr": "sum(cassandra_Keyspace_LiveDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", keyspace=~\"$Keyspace\"}) by (instance) ",
+              "hide": false,
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "Total for {{instance}}",
+              "refId": "B",
+              "step": 600
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Live Disk Space Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 14,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_TotalDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", keyspace=~\"$Keyspace\", ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\"}",
+              "hide": false,
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}-{{keyspace}}-{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            },
+            {
+              "expr": "sum(cassandra_Keyspace_TotalDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", keyspace=~\"$Keyspace\"}) by (instance)",
+              "hide": false,
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "Total for {{instance}}",
+              "refId": "B",
+              "step": 600
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Disk Space Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Disk Space Per node"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 20,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_MinRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Min Row Size Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 17,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_MeanRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": "avg(cassandra_ColumnFamily_MinRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\", ColumnFamily=~\"$ColumnFamily\"} ) by (instance).select metric"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Mean Row Size Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 16,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_MaxRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\"}",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Max Row Size Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Row Size Per Node"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 18,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_LiveSSTableCount{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Live SSTable Count Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 19,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_SnapshotsSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Snapshot Size Per ColumnFamily",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 21,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_SnapshotsSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\",ColumnFamily=\"\"}",
+              "interval": "10m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}",
+              "refId": "A",
+              "step": 600,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Snapshot Size",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Snapshot Size Per Node"
+    }
+  ],
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "pipe",
+        "datasource": "[DataSource]",
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "Cluster",
+        "query": "cassandra_Compaction_PendingTasks{}",
+        "refresh": true,
+        "regex": "/servicename=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+        },
+        "datasource": "[DataSource]",
+        "includeAll": false,
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "DC",
+        "query": "cassandra_Compaction_PendingTasks{servicename='$Cluster'}",
+        "refresh": true,
+        "regex": "/datacenter=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "pipe",
+        "current": {
+          "text": "All"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "Instance",
+        "query": "cassandra_Compaction_PendingTasks{datacenter=~\"$DC\",servicename='$Cluster'}",
+        "refresh": true,
+        "regex": "/instance=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "All",
+          "value": ".*"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "Keyspace",
+        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "refresh": true,
+        "regex": "/keyspace=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "All",
+          "value": ".*"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "ColumnFamily",
+        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",keyspace=~\"$Keyspace\"}",
+        "refresh": true,
+        "regex": "/ColumnFamily=\"([^:\"]+)/",
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 20,
+  "links": []
+}

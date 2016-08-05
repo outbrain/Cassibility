@@ -1,0 +1,1503 @@
+{
+  "id": 919,
+  "title": "Cassandra.ThreadPools",
+  "originalTitle": "Cassandra.ThreadPools",
+  "tags": [
+    "Cassandra",
+    "Cassibility"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": true,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 3,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "MutationStage",
+              "value": "MutationStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_ThreadPools_ActiveTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Active Tasks",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "MutationStage",
+              "value": "MutationStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_ThreadPools_PendingTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Pending Tasks",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 4,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "MutationStage",
+              "value": "MutationStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_CompletedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }  [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Completed Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "MutationStage",
+              "value": "MutationStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_TotalBlockedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Blocked Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 12,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "MutationStage",
+              "value": "MutationStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_CurrentlyBlockedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Currently Blocked Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "repeat": "poolName",
+      "scopedVars": {
+        "poolName": {
+          "selected": true,
+          "text": "MutationStage",
+          "value": "MutationStage"
+        }
+      },
+      "showTitle": true,
+      "title": "$poolName Thread Pool"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 13,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "ReadStage",
+              "value": "ReadStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_ThreadPools_ActiveTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Active Tasks",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 14,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "ReadStage",
+              "value": "ReadStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_ThreadPools_PendingTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Pending Tasks",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 15,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 4,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "ReadStage",
+              "value": "ReadStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_CompletedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }  [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Completed Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 16,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "ReadStage",
+              "value": "ReadStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_TotalBlockedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Blocked Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 17,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "ReadStage",
+              "value": "ReadStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_CurrentlyBlockedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Currently Blocked Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": 1469715975169,
+      "repeatRowId": 1,
+      "scopedVars": {
+        "poolName": {
+          "selected": true,
+          "text": "ReadStage",
+          "value": "ReadStage"
+        }
+      },
+      "showTitle": true,
+      "title": "$poolName Thread Pool"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 18,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "RequestResponseStage",
+              "value": "RequestResponseStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_ThreadPools_ActiveTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Active Tasks",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 19,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "RequestResponseStage",
+              "value": "RequestResponseStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(cassandra_ThreadPools_PendingTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Pending Tasks",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 20,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 4,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "RequestResponseStage",
+              "value": "RequestResponseStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_CompletedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" }  [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Completed Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 21,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "RequestResponseStage",
+              "value": "RequestResponseStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_TotalBlockedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Blocked Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 22,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "poolName": {
+              "selected": true,
+              "text": "RequestResponseStage",
+              "value": "RequestResponseStage"
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ThreadPools_CurrentlyBlockedTasks{ThreadPools=\"$poolName\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\" } [4m])) by ($groupBy) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Currently Blocked Tasks Rate",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": 1469715975169,
+      "repeatRowId": 1,
+      "scopedVars": {
+        "poolName": {
+          "selected": true,
+          "text": "RequestResponseStage",
+          "value": "RequestResponseStage"
+        }
+      },
+      "showTitle": true,
+      "title": "$poolName Thread Pool"
+    }
+  ],
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+        },
+        "datasource": "[DataSource]",
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "pipe",
+        "name": "Cluster",
+        "query": "cassandra_ThreadPools_ActiveTasks{}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/servicename=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "All",
+          "value": ".*"
+        },
+        "datasource": "[DataSource]",
+        "hideLabel": false,
+        "includeAll": true,
+        "label": "",
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "DC",
+        "query": "up",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/datacenter=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "pipe",
+        "current": {
+          "text": "All"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "instance",
+        "query": "cassandra_ThreadPools_ActiveTasks{datacenter=~\"$DC\",servicename=\"$Cluster\"}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/instance=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "instance",
+          "value": "instance"
+        },
+        "datasource": null,
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "groupBy",
+        "options": [
+          {
+            "text": "instance",
+            "value": "instance",
+            "selected": true
+          },
+          {
+            "text": "datacenter",
+            "value": "datacenter",
+            "selected": false
+          },
+          {
+            "text": "service",
+            "value": "service",
+            "selected": false
+          }
+        ],
+        "query": "instance,datacenter,service",
+        "refresh": true,
+        "refresh_on_load": true,
+        "type": "custom"
+      },
+      {
+        "allFormat": "pipe",
+        "current": {
+          "tags": [],
+          "text": "MutationStage + ReadStage + RequestResponseStage",
+          "value": [
+            "MutationStage",
+            "ReadStage",
+            "RequestResponseStage"
+          ]
+        },
+        "datasource": null,
+        "includeAll": true,
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "poolName",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "MutationStage|ReadStage|RequestResponseStage|ReadRepairStage|CounterMutationStage|MiscStage|HintedHandoff|GossipStage|CacheCleanupExecutor|InternalResponseStage|CommitLogArchiver|CompactionExecutor|ValidationExecutor|MigrationStage|AntiEntropyStage|PendingRangeCalculator|Sampler|MemtableFlushWriter|MemtablePostFlush|MemtableReclaimMemory|Native-Transport-Requests"
+          },
+          {
+            "selected": true,
+            "text": "MutationStage",
+            "value": "MutationStage"
+          },
+          {
+            "selected": true,
+            "text": "ReadStage",
+            "value": "ReadStage"
+          },
+          {
+            "selected": true,
+            "text": "RequestResponseStage",
+            "value": "RequestResponseStage"
+          },
+          {
+            "selected": false,
+            "text": "ReadRepairStage",
+            "value": "ReadRepairStage"
+          },
+          {
+            "selected": false,
+            "text": "CounterMutationStage",
+            "value": "CounterMutationStage"
+          },
+          {
+            "selected": false,
+            "text": "MiscStage",
+            "value": "MiscStage"
+          },
+          {
+            "selected": false,
+            "text": "HintedHandoff",
+            "value": "HintedHandoff"
+          },
+          {
+            "selected": false,
+            "text": "GossipStage",
+            "value": "GossipStage"
+          },
+          {
+            "selected": false,
+            "text": "CacheCleanupExecutor",
+            "value": "CacheCleanupExecutor"
+          },
+          {
+            "selected": false,
+            "text": "InternalResponseStage",
+            "value": "InternalResponseStage"
+          },
+          {
+            "selected": false,
+            "text": "CommitLogArchiver",
+            "value": "CommitLogArchiver"
+          },
+          {
+            "selected": false,
+            "text": "CompactionExecutor",
+            "value": "CompactionExecutor"
+          },
+          {
+            "selected": false,
+            "text": "ValidationExecutor",
+            "value": "ValidationExecutor"
+          },
+          {
+            "selected": false,
+            "text": "MigrationStage",
+            "value": "MigrationStage"
+          },
+          {
+            "selected": false,
+            "text": "AntiEntropyStage",
+            "value": "AntiEntropyStage"
+          },
+          {
+            "selected": false,
+            "text": "PendingRangeCalculator",
+            "value": "PendingRangeCalculator"
+          },
+          {
+            "selected": false,
+            "text": "Sampler",
+            "value": "Sampler"
+          },
+          {
+            "selected": false,
+            "text": "MemtableFlushWriter",
+            "value": "MemtableFlushWriter"
+          },
+          {
+            "selected": false,
+            "text": "MemtablePostFlush",
+            "value": "MemtablePostFlush"
+          },
+          {
+            "selected": false,
+            "text": "MemtableReclaimMemory",
+            "value": "MemtableReclaimMemory"
+          },
+          {
+            "selected": false,
+            "text": "Native-Transport-Requests",
+            "value": "Native-Transport-Requests"
+          }
+        ],
+        "query": "MutationStage,ReadStage,RequestResponseStage,ReadRepairStage,CounterMutationStage,MiscStage,HintedHandoff,GossipStage,CacheCleanupExecutor,InternalResponseStage,CommitLogArchiver,CompactionExecutor,ValidationExecutor,MigrationStage,AntiEntropyStage,PendingRangeCalculator,Sampler,MemtableFlushWriter,MemtablePostFlush,,MemtableReclaimMemory,Native-Transport-Requests",
+        "refresh": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 13,
+  "links": []
+}

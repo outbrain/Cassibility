@@ -1,0 +1,1042 @@
+{
+  "id": 897,
+  "title": "Cassandra.ReplicaRequestsColumnFamily",
+  "originalTitle": "Cassandra.ReplicaRequestsColumnFamily",
+  "tags": [
+    "Cassandra",
+    "Cassibility"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": true,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 53,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(cassandra_ColumnFamily_ReadLatency{ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}}-{{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Read Latency - $Percentile 'th Percentile",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "µs",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 54,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(cassandra_ColumnFamily_RangeLatency{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Range Request Read Latency- $Percentile 'th Percentile",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "µs",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 9,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(cassandra_ColumnFamily_WriteLatency{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m]) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Write Latency - $Percentile 'th Percentile",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "µs",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Latency Statistics Per Node"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 11,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ColumnFamily_ReadLatency{servicename=~\"$Cluster\",instance=~\"$Instance\",ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy,ColumnFamily) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Reads Count Per Second",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "rps",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 61,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ColumnFamily_RangeLatency{servicename=~\"$Cluster\",instance=~\"$Instance\",ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy,ColumnFamily) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Range Request Read Count Per Second",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "ops",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 60,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ColumnFamily_WriteLatency{ColumnFamily=~\"$ColumnFamily\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy)",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$groupBy}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Write Count Per Second",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "wps",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 14,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(cassandra_ColumnFamily_SpeculativeRetries{ColumnFamily=~\"$ColumnFamily\",keyspace=~\"$Keyspace\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\",ColumnFamily!=\"\" }[4m]))  by ($GroupBy,ColumnFamily) ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{$GroupBy}}-{{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "SpeculativeRetries By Node For ColumnFamily Reads Per Second",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Throughput Statistics"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_TombstoneScannedHistogram{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" }",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Tombstones Scanned - $Percentile 'th Percentile",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 27,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_SSTablesPerReadHistogram{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" }",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "SSTables Per Read - $Percentile 'th Percentile",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 59,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_BloomFilterFalseRatio{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}",
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "refId": "A",
+              "step": 60
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Bloom Filter False Positive Ratio",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "percentunit",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 57,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_ColumnFamily_WaitingOnFreeMemtableSpace{ColumnFamily=~\"$ColumnFamily\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } ",
+              "hide": false,
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "metric": "",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Waiting On Free Memtable Space - $Percentile 'th Percentile",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "µs",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "[DataSource]",
+          "decimals": null,
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 62,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "increase(java_lang_GarbageCollector_CollectionTime{servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}[2m])/2  > 0",
+              "interval": "1m",
+              "intervalFactor": 1,
+              "legendFormat": "{{instance}} - {{name}}",
+              "refId": "A",
+              "step": 60,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Time Spent On GC Per Minute",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "ms",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Latency Causes"
+    }
+  ],
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "regex wildcard",
+        "datasource": "[DataSource]",
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "pipe",
+        "name": "Cluster",
+        "query": "cassandra_Compaction_PendingTasks{}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/servicename=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "All",
+          "value": ".*"
+        },
+        "datasource": "[DataSource]",
+        "hideLabel": false,
+        "includeAll": true,
+        "label": "",
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "DC",
+        "query": "cassandra_ColumnFamily_ReadLatency{servicename='$Cluster'}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/datacenter=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "pipe",
+        "current": {
+          "text": "All"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": true,
+        "multiFormat": "pipe",
+        "name": "Instance",
+        "query": "cassandra_ColumnFamily_ReadLatency{datacenter=~'$DC',servicename='$Cluster'}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/instance=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "datacenter",
+          "value": "datacenter"
+        },
+        "datasource": null,
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "GroupBy",
+        "options": [
+          {
+            "text": "datacenter",
+            "value": "datacenter",
+            "selected": true
+          },
+          {
+            "text": "instance",
+            "value": "instance",
+            "selected": false
+          },
+          {
+            "text": "servicename",
+            "value": "servicename",
+            "selected": false
+          }
+        ],
+        "query": "datacenter,instance,servicename",
+        "refresh": true,
+        "refresh_on_load": true,
+        "type": "custom"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "99",
+          "value": "99"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "Percentile",
+        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/Percentile=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "Keyspace",
+        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/keyspace=\"([^:\"]+)/",
+        "type": "query"
+      },
+      {
+        "allFormat": "regex wildcard",
+        "current": {
+          "text": "All",
+          "value": ".*"
+        },
+        "datasource": "[DataSource]",
+        "includeAll": true,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "ColumnFamily",
+        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=\"$Cluster\",keyspace=~\"$Keyspace\"}",
+        "refresh": true,
+        "refresh_on_load": true,
+        "regex": "/ColumnFamily=\"([^:\"]+)/",
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 33,
+  "links": []
+}

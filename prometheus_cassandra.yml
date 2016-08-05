@@ -1,0 +1,38 @@
+hostPort: 127.0.0.1:7199
+lowercaseOutputName: false
+lowercaseOutputLabelNames: false
+whitelistObjectNames: ["org.apache.cassandra.net:*", "org.apache.cassandra.metrics:*", "org.apache.cassandra.db:*", "java.lang:*"]
+blacklistObjectNames: ["org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*system*,*", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*dse*,*", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*OpsCenter*,*", "org.apache.cassandra.db:type=ColumnFamilies,keyspace=OpsCenter,*", "org.apache.cassandra.db:type=ColumnFamilies,keyspace=system,*", "org.apache.cassandra.db:type=ColumnFamilies,keyspace=dse_system,*", "org.apache.cassandra.db:type=ColumnFamilies,keyspace=dse_perf,*", "org.apache.cassandra.db:type=ColumnFamilies,keyspace=system_traces,*", "org.apache.cassandra.metrics:type=Keyspace,keyspace=OpsCenter,*", "org.apache.cassandra.metrics:type=Keyspace,keyspace=dse_perf,*", "org.apache.cassandra.metrics:type=Keyspace,keyspace=dse_system,*", "org.apache.cassandra.metrics:type=Keyspace,keyspace=system,*", "org.apache.cassandra.metrics:type=Keyspace,keyspace=system_traces,*", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=CoordinatorReadLatency", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=RecentBloomFilterFalsePositives", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=IndexSummaryOffHeapMemoryUsed", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,scope=*,name=CompressionMetadataOffHeapMemoryUsed", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=MemtableSwitchCount", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=CasPrepareLatency", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=CasProposeLatency", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=CasCommitLatency", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=CasCommitTotalLatency", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=CasPrepareTotalLatency", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=CasPrepareLatency", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=CasProposeLatency", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=CasCommitLatency", "org.apache.cassandra.metrics:type=Keyspace,keyspace=*,name=CasCommitLatency", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=CasCommitTotalLatency", "org.apache.cassandra.metrics:type=ColumnFamily,keyspace=*,scope=*,name=CompressionMetadataOffHeapMemoryUsed", "org.apache.cassandra.db:type=ColumnFamilies,keyspace=*,columnfamily=*CompressionMetadataOffHeapMemoryUsed"]
+rules:
+- pattern: 'org.apache.cassandra.metrics<type=(Connection|Streaming), scope=(\S*), name=(\S*)><>(Count|Value)'
+  name: cassandra_$1_$3
+  labels:
+    "address": "$2"
+- pattern: 'org.apache.cassandra.metrics<type=(HintedHandOffManager)(?:, ((?!scope)\S*)=(\S*))?(?:, scope=(\S*))?, name=Hints_created-(\S*)><>(\S*)(:)'
+  name: cassandra_$1_Hints_created
+  labels:
+    "ip": "$5"
+    "function": "$6"
+- pattern: 'org.apache.cassandra.metrics<type=(\S*)(?:, ((?!scope)\S*)=(\S*))?(?:, scope=(\S*))?, name=(\S*)><>(\S*)(thPercentile:)'
+  name: cassandra_$1_$5
+  labels:
+    "$1": "$4"
+    "$2": "$3"
+    "function": "Percentile"
+    "Percentile": "$6"
+- pattern: 'org.apache.cassandra.metrics<type=(\S*)(?:, ((?!scope)\S*)=(\S*))?(?:, scope=(\S*))?, name=(\S*)><>(\S*)(:)'
+  name: cassandra_$1_$5
+  labels:
+    "$1": "$4"
+    "$2": "$3"
+    "function": "$6"
+- pattern: 'org.apache.cassandra.metrics<type=(\S*)(?:, (\S*)=(\S*))?(?:, (\S*))'
+  name: cassandra_$1_$6_scope
+  labels:
+    "$1": "$5"
+    "$2": "$3"
+    "function": "$7"
+    "somthing": "$4"
+- pattern: 'org.apache.cassandra.net<type=FailureDetector><>DownEndpointCount'
+- pattern: 'java.lang<type=GarbageCollector, name=(.+)><>CollectionCount'
+- pattern: 'java.lang<type=GarbageCollector, name=(.+)><>CollectionTime'

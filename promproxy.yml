@@ -1,0 +1,15 @@
+port: 9191
+services:
+  hackathon:
+    endpoint: http://localhost:5560/metrics
+    labels:
+      servicename: hackathon
+      instance: <your cassandra host name>
+      datacenter: <your data center name>
+
+
+### Node Config! ###
+
+  node-hack:
+    endpoint: http://localhost:9100/metrics
+    labels:
