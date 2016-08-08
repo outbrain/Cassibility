@@ -5,10 +5,10 @@ Check out our installation guide for a [quick start](https://github.com/outbrain
 
 ### Some Examples:
 Overview Dashboard:
-![alt tag](https://github.com/outbrain/Cassibility/blob/d5052ef226db1c062e32c82863c342e8945fc982/resources/OverviewDash.png)
+![Overview Dashboard](https://github.com/outbrain/Cassibility/blob/master/resources/OverviewDash.png)
 
 Entropy Dashboard:
-![alt tag](https://github.com/outbrain/Cassibility/blob/d5052ef226db1c062e32c82863c342e8945fc982/resources/EntropyDash.png)
+![Entropy Dashboard](https://github.com/outbrain/Cassibility/blob/master/resources/EntropyDash.png)
 
 
 
