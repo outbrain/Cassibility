@@ -11,6 +11,8 @@ Entropy Dashboard:
 ![Entropy Dashboard](https://github.com/outbrain/Cassibility/blob/master/resources/EntropyDash.png)
 
 
+### Contribution
+Next on the roadmap is adding customised alerts suite for prometheus so let us know if you are interested in contributing.
 
 You can reach us with any question or suggestion you have and we'll be happy to answer.
 
