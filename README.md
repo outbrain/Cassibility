@@ -18,6 +18,3 @@ You can reach us with any question or suggestion you have and we'll be happy to 
 
 ### License
 Copyright &copy; 2015 MIT License
-
-Enjoy!
-
