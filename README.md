@@ -16,5 +16,8 @@ Next on the roadmap is adding customised alerts suite for prometheus so let us k
 
 You can reach us with any question or suggestion you have and we'll be happy to answer.
 
+### License
+Copyright &copy; 2015 MIT License
+
 Enjoy!
 
